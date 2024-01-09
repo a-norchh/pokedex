@@ -1,0 +1,33 @@
+.buttom-bar {
+  position: relative;
+  height: 6rem;
+  cursor: pointer;
+  background-color: var(--bottomBarBackground);
+  transition: all 0.3s;
+
+  .btn {
+    position: absolute;
+    left: 50%;
+    top: 1rem;
+    background-color: var(--bottomBarBackground);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+
+    p {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      color: #fff;
+      font-size: 7rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &:hover,
+  &:hover > .btn {
+    background-color: var(--bottomBarBackgroundHover);
+  }
+}

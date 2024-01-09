@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Atma:wght@700&family=Gaegu:wght@300&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -16,8 +18,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-size: 1.4rem;
-  font-family: "Atma", cursive;
+  font-size: 2.8rem;
+  font-family: "Gaegu", cursive;
 }
 
 img {
@@ -58,4 +60,5 @@ img {
   right: -79px;
   top: 50%;
   border: 1px inset #7b7b7b;
+  pointer-events: none;
 }
