@@ -11,6 +11,8 @@ const CardItem = ({ cardDetails, btnActive }) => {
   let pokeHp = hp;
   if (pokeHp > 100) {
     pokeHp = 100;
+  } else if (hp === "None") {
+    pokeHp = 0;
   }
 
   let pokeStr = attacks?.length * 50;
@@ -31,13 +33,14 @@ const CardItem = ({ cardDetails, btnActive }) => {
 
   let pokeDmg = 0;
   attacks?.forEach((attack) => {
-    pokeDmg += parseInt(attack.damage.replace(/\D/g, ""));
+    if (attack.damage.replace(/\D/g, "").trim().length === 0) {
+      pokeDmg += 0;
+    } else {
+      pokeDmg += parseInt(attack.damage.replace(/\D/g, ""));
+    }
   });
 
-  // ((HP / 10) + (Damage /10 ) + 10 - (Weakness)) / 5
-  // ((100 / 10) + (60 /10 ) + 10 - (50%)) / 5
-  // ((10 + 6 + 10 - (50%)) / 5
-  let pokeHappiness = (pokeHp / 10 + (pokeDmg / 10 + 10) - pokeWeak) / 5;
+  let pokeHappiness = Math.floor((pokeHp / 10 + pokeDmg / 10 + 10) / 5);
 
   // console.log(
   //   "HP " + pokeHp,
@@ -76,7 +79,7 @@ const CardItem = ({ cardDetails, btnActive }) => {
           <Bar title="WEAK" barActive={pokeWeak} />
         </div>
         <div className="card-happiness">
-          <Happiness />
+          <Happiness score={pokeHappiness} />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 .happiness-list {
   display: flex;
+  flex-wrap: wrap;
   img {
-    width: 4rem;
+    width: 3.5rem;
   }
 }
