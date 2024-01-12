@@ -5,7 +5,7 @@ import { usePokedexContext } from "../context/PokedexContext";
 import { MODAL_INACTIVE } from "../constants/actions";
 
 const Modal = () => {
-  const { dispatch } = usePokedexContext();
+  const { dispatch, cards } = usePokedexContext();
 
   return (
     <div className="modal-contain">
@@ -15,7 +15,7 @@ const Modal = () => {
       ></div>
       <div className="modal-inner">
         <Header search />
-        <CardList className="modal-cardlist" />
+        <CardList className={"modal-cardlist"} cards={cards} btnActive="add" />
       </div>
     </div>
   );

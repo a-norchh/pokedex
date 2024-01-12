@@ -1,0 +1,11 @@
+.mycard-cardlist {
+  padding: 1.2rem;
+  .cardlist-inner {
+    ul {
+      grid-template-columns: 1fr 1fr;
+    }
+    .bar-contain {
+      grid-template-columns: 7rem auto;
+    }
+  }
+}

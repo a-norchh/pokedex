@@ -1,5 +1,6 @@
-import React, { useContext, createContext, useReducer } from "react";
+import React, { useContext, createContext, useReducer, useEffect } from "react";
 import PokedexReducer from "../reducer/PokedexReducer";
+import { startFetching } from "../api/api";
 
 const initialState = {
   modalActive: false,
@@ -11,6 +12,10 @@ const PokedexContext = createContext({});
 
 export const PokedexProvider = ({ children }) => {
   const [state, dispatch] = useReducer(PokedexReducer, initialState);
+
+  useEffect(() => {
+    startFetching(dispatch);
+  }, []);
 
   return (
     <PokedexContext.Provider value={{ ...state, dispatch }}>

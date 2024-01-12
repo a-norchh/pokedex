@@ -1,0 +1,22 @@
+.card-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  &:hover {
+    button {
+      display: block;
+    }
+  }
+  .card-image {
+    width: 14rem;
+  }
+  .card-deatils {
+    display: grid;
+    position: relative;
+    .card-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+}

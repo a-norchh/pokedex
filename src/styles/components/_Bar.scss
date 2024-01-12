@@ -1,0 +1,23 @@
+.bar-contain {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 8.5rem auto;
+  .bar-title {
+    font-size: 2rem;
+  }
+  .bar,
+  .bar-active {
+    border-radius: 10rem;
+  }
+  .bar {
+    position: relative;
+    max-width: 28rem;
+    height: 2rem;
+    background-color: var(--levelTubeBackground);
+    .bar-active {
+      background-color: var(--levelTubeValueBackground);
+      width: 50%;
+      height: 100%;
+    }
+  }
+}

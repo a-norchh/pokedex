@@ -28,5 +28,10 @@
 
   .modal-cardlist {
     margin-top: 1rem;
+    .cardlist-inner {
+      ul {
+        // grid-template-columns: 1fr 1fr;
+      }
+    }
   }
 }
